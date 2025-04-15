@@ -7,11 +7,17 @@ import ToolsSection from "@/components/ToolsSection";
 import Footer from "@/components/Footer";
 import AdBanner from "@/components/AdBanner";
 import SchemaMarkup, { CategorySchema } from "@/components/SchemaMarkup";
+import SeoBoost from "@/components/SeoBoost";
 import { toolsData } from "@/data/toolsData";
 
 export default function Home() {
   return (
     <main>
+      <SeoBoost
+        title="AI Tools Hub | Directory of Best AI Tools & Software"
+        description="Discover top AI tools for content generation, image creation, productivity, development and data analysis. Find the best AI software to boost your workflow."
+        ogImage="/images/homepage-og.png"
+      />
       <Header />
       <Hero />
       
@@ -23,7 +29,7 @@ export default function Home() {
         <AdBanner adSlot="1234567890" />
       </div>
       
-      <div className="container py-16">
+      <div className="container py-16" id="tools">
         <h2 className="text-center mb-12">Explore AI Tools By Category</h2>
         
         {Object.entries(toolsData).map(([category, tools], index) => (

@@ -55,9 +55,9 @@ export default function About() {
                 Stay updated with the latest AI tools and developments by joining our community:
               </p>
               <div className="flex flex-col space-y-3">
-                <a href="#" className="btn btn-primary">Subscribe to Our Newsletter</a>
-                <a href="#" className="btn btn-secondary">Follow Us on Twitter</a>
-                <a href="#" className="btn border border-primary text-primary hover:bg-primary/10">Join Our Discord</a>
+                <a href="#" className="btn btn-primary" rel="noopener noreferrer">Subscribe to Our Newsletter</a>
+                <a href="#" className="btn btn-secondary" rel="noopener noreferrer">Follow Us on Twitter</a>
+                <a href="#" className="btn border border-primary text-primary hover:bg-primary/10" rel="noopener noreferrer">Join Our Discord</a>
               </div>
             </div>
           </div>

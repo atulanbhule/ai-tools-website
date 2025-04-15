@@ -2,35 +2,44 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const handleNavigation = (path: string) => {
+    router.push(path);
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header className="bg-white shadow-sm">
       <div className="container flex items-center justify-between py-4">
-        <Link href="/" className="text-2xl font-bold text-primary">
+        <button onClick={() => handleNavigation('/')} className="text-2xl font-bold text-primary">
           AI Tools Hub
-        </Link>
+        </button>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <Link href="/" className="hover:text-primary transition-colors">
+          <button onClick={() => handleNavigation('/')} className="hover:text-primary transition-colors">
             Home
-          </Link>
-          <Link href="#tools" className="hover:text-primary transition-colors">
+          </button>
+          <button onClick={() => handleNavigation('/#tools')} className="hover:text-primary transition-colors">
             Tools
-          </Link>
-          <Link href="#about" className="hover:text-primary transition-colors">
+          </button>
+          <button onClick={() => handleNavigation('/about')} className="hover:text-primary transition-colors">
             About
-          </Link>
-          <Link href="#contact" className="hover:text-primary transition-colors">
+          </button>
+          <button onClick={() => handleNavigation('/contact')} className="hover:text-primary transition-colors">
             Contact
-          </Link>
+          </button>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -48,18 +57,18 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="fixed inset-0 bg-white z-10 md:hidden">
             <div className="flex flex-col items-center justify-center h-full space-y-8 text-xl">
-              <Link href="/" className="hover:text-primary transition-colors" onClick={toggleMenu}>
+              <button onClick={() => handleNavigation('/')} className="hover:text-primary transition-colors">
                 Home
-              </Link>
-              <Link href="#tools" className="hover:text-primary transition-colors" onClick={toggleMenu}>
+              </button>
+              <button onClick={() => handleNavigation('/#tools')} className="hover:text-primary transition-colors">
                 Tools
-              </Link>
-              <Link href="#about" className="hover:text-primary transition-colors" onClick={toggleMenu}>
+              </button>
+              <button onClick={() => handleNavigation('/about')} className="hover:text-primary transition-colors">
                 About
-              </Link>
-              <Link href="#contact" className="hover:text-primary transition-colors" onClick={toggleMenu}>
+              </button>
+              <button onClick={() => handleNavigation('/contact')} className="hover:text-primary transition-colors">
                 Contact
-              </Link>
+              </button>
             </div>
           </div>
         )}

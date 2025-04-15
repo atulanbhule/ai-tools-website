@@ -40,6 +40,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
             target="_blank" 
             rel="noopener noreferrer"
             className="btn btn-primary w-full flex justify-center items-center"
+            aria-label={`Visit ${tool.name} website`}
           >
             Visit Tool
           </a>

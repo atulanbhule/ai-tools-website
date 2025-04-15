@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -14,12 +15,12 @@ const Hero = () => {
             Explore our curated collection of AI tools to boost your productivity, creativity, and efficiency.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#tools" className="btn bg-white text-primary hover:bg-gray-100">
+            <Link href="/#tools" className="btn bg-white text-primary hover:bg-gray-100">
               Explore Tools
-            </a>
-            <a href="#popular" className="btn border border-white hover:bg-white/10">
+            </Link>
+            <Link href="/#content-generation" className="btn border border-white hover:bg-white/10">
               Popular Tools
-            </a>
+            </Link>
           </div>
         </div>
       </div>
